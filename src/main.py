@@ -1,16 +1,10 @@
-import sys
 from pathlib import Path
 from scanner import collect_items
 from report import make_report
 
 def main():
-    if len(sys.argv) < 2:
-        print("Ошибка: укажите путь к папке при запуске программы.")
-        print("Пример: python main.py C:\\Users\\i5\\Documents")
-        return
-
-    folder_path = Path(sys.argv[1])
-
+    folder_input = input("Введите путь к папке: ").strip()
+    folder_path = Path(folder_input)
     if not folder_path.exists():
         print("Ошибка: указанная папка не существует.")
         return
@@ -22,3 +16,5 @@ def main():
     files, dirs = collect_items(folder_path)
     make_report(files, dirs)
 
+if __name__ == "__main__":
+    main()
