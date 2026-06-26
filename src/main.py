@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from scanner import scan_folder
+from scanner import collect_items
 from report import make_report
 
 def main():
@@ -19,5 +19,6 @@ def main():
         print("Ошибка: путь должен указывать на папку, а не на файл.")
         return
 
-    files, dirs = scan_folder(folder_path)
+    files, dirs = collect_items(folder_path)
     make_report(files, dirs)
+
