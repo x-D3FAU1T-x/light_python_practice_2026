@@ -14,10 +14,10 @@ def main():
         print("Ошибка: путь должен указывать на папку, а не на файл.")
         return
 
-    print("\nДерево папок")
+    print("\nДерево папок:")
     show_tree(folder_path)
 
-    print("\nОтчёт")
+    print("\nОтчёт:")
     files, dirs = collect_items(folder_path)
     make_report(files, dirs)
 
